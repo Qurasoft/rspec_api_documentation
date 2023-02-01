@@ -38,16 +38,20 @@
 
 #### Headers
 
-<pre>{{ request_headers_text }}</pre>
+```
+{{ request_headers_text }}
+```
 
 #### Route
 
-<pre>{{ request_method }} {{ request_path }}</pre>
+`{{ request_method }} {{ request_path }}`
 {{# request_query_parameters_text }}
 
 #### Query Parameters
 
-<pre>{{ request_query_parameters_text }}</pre>
+```
+{{ request_query_parameters_text }}
+```
 {{/ request_query_parameters_text }}
 {{# request_body }}
 
@@ -69,11 +73,13 @@
 
 #### Headers
 
-<pre>{{ response_headers_text }}</pre>
+```
+{{ response_headers_text }}
+```
 
 #### Status
 
-<pre>{{ response_status }} {{ response_status_text}}</pre>
+`{{ response_status }} {{ response_status_text}}`
 
 {{# response_body }}
 #### Body
