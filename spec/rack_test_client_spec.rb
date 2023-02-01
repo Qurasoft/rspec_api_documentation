@@ -46,6 +46,7 @@ describe RspecApiDocumentation::RackTestClient do
 
     it "should contain all the headers" do
       expect(test_client.request_headers).to eq({
+        "Version"=>"HTTP/1.0",
         "Accept" => "application/json",
         "Content-Type" => "application/json",
         "Host" => "example.org",
@@ -85,12 +86,14 @@ describe RspecApiDocumentation::RackTestClient do
         expect(metadata[:request_headers]).to include({'X-Custom-Header' => 'custom header value'})
         expect(metadata[:request_query_parameters]).to eq({"query" => "test query"})
         expect(metadata[:request_content_type]).to match(/application\/json/)
+        expect(metadata[:request_format]).to eq('json')
         expect(metadata[:response_status]).to eq(200)
         expect(metadata[:response_body]).to be_present
         expect(metadata[:response_headers]['Content-Type']).to match(/application\/json/)
         expect(metadata[:response_headers]['Content-Length']).to eq('17')
         expect(metadata[:response_content_type]).to match(/application\/json/)
-        expect(metadata[:curl]).to eq(RspecApiDocumentation::Curl.new("POST", "/greet?query=test+query", post_data, {"Content-Type" => "application/json;charset=utf-8", "X-Custom-Header" => "custom header value", "Host" => "example.org", "Cookie" => ""}))
+        expect(metadata[:response_format]).to eq('json')
+        expect(metadata[:curl]).to eq(RspecApiDocumentation::Curl.new("POST", "/greet?query=test+query", post_data, {"Version"=>"HTTP/1.0", "Content-Type" => "application/json;charset=utf-8", "X-Custom-Header" => "custom header value", "Host" => "example.org", "Cookie" => ""}))
       end
 
       specify "fetching binary data" do |example|
