@@ -155,6 +155,7 @@ Feature: Generate Slate documentation from test examples
 
     ```shell
     curl -g "http://localhost:3000/orders" -X GET \
+    	-H "Version: HTTP/1.0" \
     	-H "Host: example.org" \
     	-H "Cookie: "
     ```
@@ -219,6 +220,7 @@ Feature: Generate Slate documentation from test examples
     
     ```shell
     curl "http://localhost:3000/orders" -d 'name=Order+3&amount=33.0' -X POST \
+    	-H "Version: HTTP/1.0" \
     	-H "Host: example.org" \
     	-H "Content-Type: application/x-www-form-urlencoded" \
     	-H "Cookie: "
