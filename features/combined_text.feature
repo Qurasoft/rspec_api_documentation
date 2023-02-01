@@ -80,6 +80,7 @@ Feature: Combined text
       GET /greetings?target=rspec_api_documentation
       Cookie: 
       Host: example.org
+      Version: HTTP/1.0
 
       target=rspec_api_documentation
 
@@ -101,6 +102,7 @@ Feature: Combined text
       GET /greetings?target=Sam+%26+Eric
       Cookie: 
       Host: example.org
+      Version: HTTP/1.0
 
       target=Sam & Eric
 

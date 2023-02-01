@@ -118,10 +118,10 @@ module RspecApiDocumentation
     # See RspecApiDocumentation::DSL::Endpoint#do_request
     add_setting :response_body_formatter, default: Proc.new { |_, _|
       Proc.new do |content_type, response_body|
-        if response_body.encoding == Encoding::ASCII_8BIT
-          "[binary data]"
-        elsif content_type =~ /application\/.*json/
+        if content_type =~ /application\/.*json/
           JSON.pretty_generate(JSON.parse(response_body))
+        elsif response_body.encoding == Encoding::ASCII_8BIT
+          "[binary data]"
         else
           response_body
         end
