@@ -3,7 +3,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "rspec_api_documentation"
-  s.version     = "6.1.1"
+  s.version     = "6.1.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Chris Cahoon", "Sam Goldman", "Eric Oestrich", "Lucas Keune"]
   s.email       = %w[chris@smartlogicsolutions.com sam@smartlogicsolutions.com eric@smartlogicsolutions.com lucas.keune@qurasoft.de]
