@@ -96,7 +96,8 @@ module RspecApiDocumentation
 
     def format_type(content_type)
       case content_type
-      when 'application/json' then 'json'
+      when /^application\/json/ then 'json'
+      when /^text\/html/ then 'html'
       else
         nil
       end
