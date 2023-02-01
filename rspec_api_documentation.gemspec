@@ -3,7 +3,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "rspec_api_documentation"
-  s.version     = "6.1.2"
+  s.version     = "6.2.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Chris Cahoon", "Sam Goldman", "Eric Oestrich", "Lucas Keune"]
   s.email       = %w[chris@smartlogicsolutions.com sam@smartlogicsolutions.com eric@smartlogicsolutions.com lucas.keune@qurasoft.de]
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "bundler", ">= 1.16"
   s.add_development_dependency "fakefs", ">= 0.6.0"
   s.add_development_dependency "sinatra", "~> 1.4.7"
-  s.add_development_dependency "aruba", "~> 0.13.0"
+  s.add_development_dependency "aruba", "~> 0.14.0"
   s.add_development_dependency "capybara", "~> 2.6.2"
   s.add_development_dependency "rake", ">= 10"
   s.add_development_dependency "rack-test", "~> 0.6.3"

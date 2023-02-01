@@ -96,6 +96,7 @@ Feature: Combined text
               "target": "rspec_api_documentation"
             },
             "request_content_type": null,
+            "request_format": null,
             "response_status": 200,
             "response_status_text": "OK",
             "response_body": "Hello, rspec_api_documentation!",
@@ -103,6 +104,7 @@ Feature: Combined text
               "Content-Type": "text/plain"
             },
             "response_content_type": "text/plain",
+            "response_format": null,
             "curl": null
           }
         ]
@@ -133,6 +135,7 @@ Feature: Combined text
               "target": "Sam & Eric"
             },
             "request_content_type": null,
+            "request_format": null,
             "response_status": 200,
             "response_status_text": "OK",
             "response_body": "Hello, Sam & Eric!",
@@ -140,6 +143,7 @@ Feature: Combined text
               "Content-Type": "text/plain"
             },
             "response_content_type": "text/plain",
+            "response_format": null,
             "curl": null
           }
         ]
