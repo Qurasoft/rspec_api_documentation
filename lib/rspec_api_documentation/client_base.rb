@@ -66,11 +66,13 @@ module RspecApiDocumentation
       request_metadata[:request_headers] = request_headers
       request_metadata[:request_query_parameters] = query_hash
       request_metadata[:request_content_type] = request_content_type
+      request_metadata[:request_format] = format_type(request_content_type)
       request_metadata[:response_status] = status
       request_metadata[:response_status_text] = Rack::Utils::HTTP_STATUS_CODES[status]
       request_metadata[:response_body] = record_response_body(response_content_type, response_body)
       request_metadata[:response_headers] = response_headers
       request_metadata[:response_content_type] = response_content_type
+      request_metadata[:response_format] = format_type(response_content_type)
       request_metadata[:curl] = Curl.new(method, path, request_body, request_headers)
 
       metadata[:requests] ||= []
@@ -90,6 +92,14 @@ module RspecApiDocumentation
 
       formatter = RspecApiDocumentation.configuration.response_body_formatter
       formatter.call(response_content_type, response_body)
+    end
+
+    def format_type(content_type)
+      case content_type
+      when 'application/json' then 'json'
+      else
+        nil
+      end
     end
 
     def clean_out_uploaded_data(params, request_body)
